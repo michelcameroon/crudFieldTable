@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Update Student</h2>
+    <form method="POST">
+        {% for field in fields %}
+            <div class="mb-3">
+                <label for="{{ field }}" class="form-label">{{ field.capitalize() }}</label>
+                <input type="text" class="form-control" id="{{ field }}" name="{{ field }}" value="{{ student[field] }}" required>
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-warning">Update</button>
+    </form>
+{% endblock %}
